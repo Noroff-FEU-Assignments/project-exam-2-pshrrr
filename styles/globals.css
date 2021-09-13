@@ -1,0 +1,54 @@
+/* 
+ font-family: bebas-neue-v14-deprecated, sans-serif;
+font-family: 'Roboto', sans-serif;
+
+COLORS : 
+
+BEIGE : #f4db9b
+Greenbeige : #ecebc9 
+greish : #f6f6db
+lightgreen : #d5e7b8
+middlegreen : #c4dea4
+green : #a7d489
+*/
+
+/* TYPE WRITING ANIMATION */
+
+.animation {
+  height: 100%;
+  display: flex;
+  margin-top: 150px;
+}
+
+.typewriter {
+  color: #000000;
+  font-family: bebas-neue-v14-deprecated, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: title 7s steps(70, end);
+  margin-bottom: 0px;
+}
+
+@keyframes title {
+  from {
+    width: 0;
+    opacity: 0.0;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+
+/* MEDIA QUERIES FOOTER  */
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .footericons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+  .footericons li {
+    padding: 10px;
+  }
+}
