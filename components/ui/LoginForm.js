@@ -30,7 +30,7 @@ function Register() {
   });
 
   async function onSubmit(data) {
-    const url = "http://localhost:1337/auth/local";
+    const url = "https://sheltered-earth-62986.herokuapp.com/auth/local";
     console.log(data);
     try {
       const response = await axios.post(url, data);
@@ -45,17 +45,24 @@ function Register() {
   console.log(errors);
 
   return (
-
     <div className="login">
-    <form onSubmit={handleSubmit(onSubmit)}>
-    
-      <input  placeholder="Email"type="identifier" {...register("identifier")} />
-      {errors.identifier && <span>{errors.identifier.message}</span>}
-      
-      <input placeholder ="Password"name="password" type="password" {...register("password")} />
-      {errors.password && <span>{errors.password.message}</span>}
-      <input type="submit" value="Login" />
-    </form>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          placeholder="Email"
+          type="identifier"
+          {...register("identifier")}
+        />
+        {errors.identifier && <span>{errors.identifier.message}</span>}
+
+        <input
+          placeholder="Password"
+          name="password"
+          type="password"
+          {...register("password")}
+        />
+        {errors.password && <span>{errors.password.message}</span>}
+        <input type="submit" value="Login" />
+      </form>
     </div>
   );
 }

@@ -1,34 +1,40 @@
 .kortstrek {
-    max-width: 100%;
-    background-color: #000;
-    height: 8px;
-    max-width: 500px;
-    margin-top: -10px;
-    
-
+  max-width: 100%;
+  background-color: #000;
+  height: 8px;
+  max-width: 500px;
+  margin-top: -10px;
 }
 .contact {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 100px;
 }
 .contact-box {
-    width: 500px;
-    margin: 0px auto;
- 
-    
-    
+  width: 500px;
+  margin: 0px auto;
 }
 .form-box {
-    width: 500px;
-    align-items: center;
-    margin: 0px auto;
-    margin-top: 100px;
+  max-width: 500px;
+  align-items: center;
+  margin: 50px auto;
+  margin-top: 100px;
 }
 
 @media (min-width: 320px) and (max-width: 1024px) {
-    .contact{
-     flex-direction: column;
-    } }
+  .contact {
+    flex-direction: column;
+  }
+  .contact-box {
+    width: 300px;
+    margin: 0px auto;
+  }
+  .form-box {
+    max-width: 300px;
+    align-items: center;
+    margin: 50px auto;
+    margin-top: 100px;
+  }
+}

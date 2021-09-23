@@ -1,22 +1,26 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const schema = yup.object().shape({
   name: yup
     .string()
     .required("Please enter your name")
     .min(3, "Name must be at least 3 characters"),
-  email: yup
+  work: yup
     .string()
-    .required("Please enter an email address")
-    .email("Please enter a valid email address"),
-  message: yup
+    .required("Please enter the work youve done")
+    .min(10, "Work must be at least 10 characters"),
+  url: yup
     .string()
-    .required("Please enter your message")
-    .min(10, "The message must be at least 10 characters"),
+    .required("Please enter your name")
+    .min(4, "Url must be at least 4 characters"),
+  img_url: yup
+    .string()
+    .required("Please enter your name")
+    .min(4, "Url must be over 4 characters"),
 });
 
 function Form() {
@@ -28,8 +32,10 @@ function Form() {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
   async function onSubmit(data) {
     console.log("data: ", data);
+
     try {
       const apiUrl = "https://sheltered-earth-62986.herokuapp.com/projects";
       const formData = new FormData();
@@ -38,11 +44,12 @@ function Form() {
 
       formData.append("data", JSON.stringify(data.name));
       const resp = await axios.post(
-        "https://sheltered-earth-62986.herokuapp.com/messages",
+        "https://sheltered-earth-62986.herokuapp.com/projects",
         {
           name: data.name,
-          message: data.message,
-          email: data.email,
+          work: data.work,
+          img_url: data.img_url,
+          URL: data.url,
         },
         {
           headers: {
@@ -51,12 +58,11 @@ function Form() {
           },
         }
       );
-
-      setSuccess("Successfully sent message");
+      setSuccess("Successfully added a project to api");
       console.log(data);
       console.log(resp.data);
     } catch (error) {
-      setSuccess("Message was not sent");
+      setSuccess("Project was not uploaded to api, check console");
       console.log(error);
     }
   }
@@ -66,11 +72,17 @@ function Form() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <input placeholder="Name" {...register("name")} />
         {errors.name && <span>{errors.name.message}</span>}
-        <input placeholder="Mail" {...register("email")} />
-        {errors.email && <span>{errors.email.message}</span>}
-        <textarea placeholder="Message" {...register("message")} />
-        {errors.message && <span>{errors.message.message}</span>}
-        <input type="submit" value="send" />
+
+        <textarea placeholder="Work" {...register("work")} />
+        {errors.work && <span>{errors.work.message}</span>}
+
+        <input placeholder="IMAGE URL" {...register("img_url")} />
+        {errors.image_url && <span>{errors.image_url.message}</span>}
+
+        <input placeholder="URL" {...register("url")} />
+        {errors.url && <span>{errors.url.message}</span>}
+
+        <input type="submit" value="add" />
       </form>
       <div className="success">{success}</div>
     </>
