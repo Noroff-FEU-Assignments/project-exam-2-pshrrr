@@ -28,6 +28,9 @@ function Messages() {
         .delete(`https://sheltered-earth-62986.herokuapp.com/messages/${id}`)
         .then((response) => {
           console.log(response);
+          window.setTimeout(function () {
+            location.reload();
+          }, 1500);
         });
     } catch (error) {
       console.log(error);

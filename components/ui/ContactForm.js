@@ -70,7 +70,15 @@ function Form() {
         {errors.email && <span>{errors.email.message}</span>}
         <textarea placeholder="Message" {...register("message")} />
         {errors.message && <span>{errors.message.message}</span>}
-        <input type="submit" value="send" />
+        <input
+          type="submit"
+          value="send"
+          onClick={() =>
+            window.setTimeout(function () {
+              location.reload();
+            }, 1500)
+          }
+        />
       </form>
       <div className="success">{success}</div>
     </>

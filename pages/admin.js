@@ -2,7 +2,7 @@ import Auth from "../components/admin/auth";
 import Head from "next/head";
 import Form from "../components/admin/addForm";
 import Messages from "../components/admin/messages";
-import RefreshButton from "../components/ui/RefreshButton";
+
 import LogoutButton from "../components/ui/LogoutButton";
 
 const Projects = ({ projects }) => {
@@ -26,7 +26,7 @@ const Projects = ({ projects }) => {
       <div className="msg-box">
         <Messages></Messages>
       </div>
-      <RefreshButton></RefreshButton>
+
       <LogoutButton></LogoutButton>
     </>
   );
