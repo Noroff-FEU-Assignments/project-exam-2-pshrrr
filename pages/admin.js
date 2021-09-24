@@ -1,4 +1,3 @@
-import Auth from "../components/admin/auth";
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import Form from "../components/admin/addForm";
@@ -6,7 +5,7 @@ import Messages from "../components/admin/messages";
 
 import LogoutButton from "../components/ui/LogoutButton";
 
-const Projects = ({ projects }) => {
+const Admin = ({ admin }) => {
   return (
     <>
       <Layout>
@@ -35,4 +34,4 @@ const Projects = ({ projects }) => {
   );
 };
 
-export default Projects;
+export default Admin;

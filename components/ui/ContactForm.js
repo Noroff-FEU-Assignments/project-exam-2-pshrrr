@@ -31,7 +31,7 @@ function Form() {
   async function onSubmit(data) {
     console.log("data: ", data);
     try {
-      const apiUrl = "https://sheltered-earth-62986.herokuapp.com/projects";
+      const apiUrl = "https://sheltered-earth-62986.herokuapp.com/messages";
       const formData = new FormData();
 
       console.log(formData);
