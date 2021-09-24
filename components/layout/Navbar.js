@@ -28,6 +28,31 @@ export default function Navbar() {
           <Image src={logosvart} alt="Our logo in black colors" />
         </a>
       </div>
+      <div class="burger">
+        <div class="line1">
+          {" "}
+          <li className={router.pathname == "/" ? "active" : ""}>
+            <Link href="/">Home</Link>
+          </li>
+        </div>
+        <div class="line2">
+          {" "}
+          <li className={router.pathname == "/projects" ? "active" : ""}>
+            <Link href="/projects">Projects</Link>
+          </li>
+        </div>
+        <div class="line3">
+          <li className={router.pathname == "/contact" ? "active" : ""}>
+            <Link href="/contact">Contact</Link>
+          </li>
+        </div>
+        <div class="line4">
+          {" "}
+          <li className={router.pathname == "/login" ? "active" : ""}>
+            <Link href="/login">Admin</Link>
+          </li>
+        </div>
+      </div>
     </>
   );
 }

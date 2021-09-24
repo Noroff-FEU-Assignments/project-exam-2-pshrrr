@@ -45,10 +45,14 @@ function Messages() {
     return (
       <ul>
         {items.map((message) => (
-          <li key={message.id}>
-            From : {message.name} Message : {message.message} Email :{" "}
-            {message.email}
-            <button onClick={() => deleteMessage(message.id)}> Delete</button>
+          <li className="message-li" key={message.id}>
+            <p> From : {message.name}</p>
+            <p> Message : {message.message} </p>
+            <p>Email : {message.email}</p>
+            <button className="btn-3" onClick={() => deleteMessage(message.id)}>
+              {" "}
+              Delete
+            </button>
           </li>
         ))}
       </ul>

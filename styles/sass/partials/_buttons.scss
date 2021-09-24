@@ -98,3 +98,28 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
+.btn-3 {
+  display: flex;
+  background: none;
+  border: 2px solid black;
+  cursor: pointer;
+  line-height: 1.5;
+  font-family: $font-headings;
+  font-size: 20px;
+  padding: 0.3em 2em;
+  letter-spacing: 0.05rem;
+  margin: 0px auto;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.btn-3:hover {
+  background: #000;
+  color: #fff;
+  font-family: $font-headings;
+}
+.btn-2:hover {
+  background: #000;
+  color: #fff;
+  font-family: $font-headings;
+}
