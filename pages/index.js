@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Meta from "../components/layout/Head";
 import Layout from "../components/layout/Layout";
 import logosvart from "../public/images/logosvart.png";
 import visit from "../public/images/visit.jpg";
@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <Layout>
-      <Head />
+      <Meta title="FABRKN" description="Our Homepage" />
 
       <div className="animation">
         <h1 className="typewriter">HELLO,WE ARE FABRKN.</h1>

@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Meta from "../components/layout/Head";
 import Layout from "../components/layout/Layout";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import { BASE_URL } from "../components/constants/api";
 const Projects = ({ projects }) => {
   return (
     <Layout>
-      <Head />
+      <Meta title="OUR PROJECTS" description="Showcasing our projects" />
       <h1 className="regh1">PROJECTS</h1>
 
       <div className="strek-2"></div>

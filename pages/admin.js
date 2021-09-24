@@ -10,7 +10,7 @@ const Projects = ({ projects }) => {
   return (
     <>
       <Layout>
-        <Head />
+        <Head title="FABRKN" description="Our admin page" />
 
         <h1 className="adminh1">welcome admin</h1>
 
